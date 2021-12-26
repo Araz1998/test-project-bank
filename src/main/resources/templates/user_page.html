@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<h1>User page</h1>
+<form th:action="@{/transfer}" method="post">
+    <div><label> For account : <input type="text" name="username"/> </label></div>
+    <div><label> Amount: <input name="amount"/> </label></div>
+    <div><input type="submit" value="Send"/></div>
+</form>
+</body>
+</html>
