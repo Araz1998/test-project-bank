@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+<h1>Main page</h1>
+<a href="/login">Login</a>
+<a href="/user">User</a>
+<h1>Users</h1>
+<table>
+    <tr>
+        <td>User ID</td>
+        <td>Username</td>
+        <td>Password</td>
+        <td>Role</td>
+    </tr>
+    <tr th:each="product: ${products}">
+        <td th:text="${product.id}">id</td>
+        <td th:text="${product.brand}">Brand</td>
+        <td th:text="${product.madein}">MadeIn</td>
+        <td th:text="${product.name}">Name</td>
+        <td th:text="${product.price}">Price</td>
+    </tr>
+</table>
+</body>
+</html>

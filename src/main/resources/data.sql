@@ -15,3 +15,5 @@ INSERT INTO USER_ROLES (user_id, role_id) VALUES (3, 3); -- user john has role E
 INSERT INTO USER_ROLES (user_id, role_id) VALUES (4, 2); -- user namhm has role CREATOR
 INSERT INTO USER_ROLES (user_id, role_id) VALUES (4, 3); -- user namhm has role EDITOR
 INSERT INTO USER_ROLES (user_id, role_id) VALUES (5, 4); -- user admin has role ADMIN
+
+INSERT INTO PRODUCT (BRAND, MADEIN, NAME, PRICE) VALUES ('Araz.inc', 'German', 'test', 123);

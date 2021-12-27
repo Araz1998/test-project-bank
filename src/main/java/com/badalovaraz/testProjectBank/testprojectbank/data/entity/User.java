@@ -1,11 +1,8 @@
 package com.badalovaraz.testProjectBank.testprojectbank.data.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "USER")
@@ -18,8 +15,14 @@ public class User {
     private String username;
     @Column(name = "PASSWORD")
     private String password;
-    @Column(name = "ROLE")
-    private String role;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "USER_ROLES",
+            joinColumns = @JoinColumn(name = "USER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
+    )
+    private Set<Role> roles = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -45,11 +48,11 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(String roles) {
-        this.role = roles;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

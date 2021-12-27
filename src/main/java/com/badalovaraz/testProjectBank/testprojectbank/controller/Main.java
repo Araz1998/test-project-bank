@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/")
-public class Main {
-
-    private final UserService userService;
-
-    @Autowired
-    public Main(UserService userService) {
-        this.userService = userService;
-    }
-
-    @GetMapping
-    public String getMain(Model model) {
-        List<User> users = this.userService.getAllUsers();
-        model.addAttribute("users", users);
-        return "index";
-    }
-}
+//@Controller
+//@RequestMapping("/")
+//public class Main {
+//
+//    private final UserService userService;
+//
+//    @Autowired
+//    public Main(UserService userService) {
+//        this.userService = userService;
+//    }
+//
+//    @GetMapping
+//    public String getMain(Model model) {
+//        List<User> users = this.userService.getAllUsers();
+//        model.addAttribute("users", users);
+//        return "index";
+//    }
+//}
